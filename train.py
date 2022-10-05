@@ -126,7 +126,8 @@ def main(args):
                   "on a single-gpu first, as it will be faster")
 
         dataset = torchvision.datasets.UCF101(
-            '/content/dataset/UCF-101', '/content/dataset/ucfTrainTestlist',
+            '/content/action_recognition_R2plus1d/dataset/UCF-101',
+            '/content/action_recognition_R2plus1d/dataset/ucfTrainTestlist',
             frames_per_clip=16, step_between_clips=5
         )
         if args.cache_dataset:
@@ -149,7 +150,8 @@ def main(args):
                   "on a single-gpu first, as it will be faster")
 
         dataset_test = torchvision.datasets.UCF101(
-            '/content/dataset/UCF-101', '/content/dataset/ucfTrainTestlist',
+            '/content/action_recognition_R2plus1d/dataset/UCF-101',
+             '/content/action_recognition_R2plus1d/dataset/ucfTrainTestlist',
             frames_per_clip=16, step_between_clips=5, train=False
         )
         if args.cache_dataset:
