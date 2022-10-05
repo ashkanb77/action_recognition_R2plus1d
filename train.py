@@ -129,7 +129,7 @@ def main(args):
         dataset = torchvision.datasets.UCF101(
             '/content/action_recognition_R2plus1d/dataset/UCF-101',
             '/content/action_recognition_R2plus1d/dataset/ucfTrainTestlist',
-            frames_per_clip=16, step_between_clips=5
+            frames_per_clip=16, step_between_clips=5, transform=transform_train
         )
         if args.cache_dataset:
             print("Saving dataset_train to {}".format(cache_path))
@@ -153,7 +153,7 @@ def main(args):
         dataset_test = torchvision.datasets.UCF101(
             '/content/action_recognition_R2plus1d/dataset/UCF-101',
              '/content/action_recognition_R2plus1d/dataset/ucfTrainTestlist',
-            frames_per_clip=16, step_between_clips=5, train=False
+            frames_per_clip=16, step_between_clips=5, train=False, transform=transform_test
         )
         if args.cache_dataset:
             print("Saving dataset_test to {}".format(cache_path))
