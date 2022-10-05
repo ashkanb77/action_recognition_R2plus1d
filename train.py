@@ -36,6 +36,7 @@ def train_one_epoch(model, criterion, optimizer, lr_scheduler, data_loader, devi
             output = model(video)
             loss = criterion(output, target)
 
+
             optimizer.zero_grad()
             if apex:
                 with amp.scale_loss(loss, optimizer) as scaled_loss:
